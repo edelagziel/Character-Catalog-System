@@ -1,7 +1,8 @@
-// FileReader.h
 #ifndef FILEREADER_H
 #define FILEREADER_H
-#include <cstdio>
+
+#include <fstream>
+#include <cstring>
 
 class FileReader {
 public:
@@ -11,8 +12,7 @@ public:
     char* getNextLine();
 
 private:
-    FILE* file;
-    char buffer[256]; // Adjust size as needed
+    std::ifstream file;
 };
 
 #endif

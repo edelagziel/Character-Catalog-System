@@ -1,27 +1,31 @@
-// FileReader.cpp
 #include "FileReader.h"
-#include <cstdio>
-#include <cstring>
 
 FileReader::FileReader(const char* filename) {
-    file = fopen(filename, "r");
+    file.open(filename);
 }
 
 FileReader::~FileReader() {
-    if (file != NULL) {
-        fclose(file);
+    if (file.is_open()) {
+        file.close();
     }
 }
 
 bool FileReader::isOpen() {
-    return file != NULL;
+    return file.is_open();
 }
 
 char* FileReader::getNextLine() {
-    if (file == NULL || fgets(buffer, sizeof(buffer), file) == NULL) {
+    if (!file.is_open()) {
         return NULL;
     }
-    // Remove newline character
-    buffer[strcspn(buffer, "\n")] = 0;
-    return buffer;
+
+    std::string line;
+    if (std::getline(file, line)) {
+        // Convert std::string to char*
+        char* cstr = new char[line.length() + 1];
+        std::strcpy(cstr, line.c_str());
+        return cstr;
+    } else {
+        return NULL;
+    }
 }
