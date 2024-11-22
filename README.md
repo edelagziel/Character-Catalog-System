@@ -51,21 +51,93 @@ Your mission (and yes, you should accept it, or the coding gods will frown upon 
     - If a TV show doesn't exist in your list yet, create a new `TVShow` node.
     - Add each character to the linked list of their respective TV show.
 
-- **Menu-Driven Interface**:
-  - The program should display a menu with the following options:
-    1. **Display All TV Shows and Characters**: Show all TV shows and their characters.
-    2. **Add a New Character**: Input character details and add to the correct TV show.
-    3. **Delete a Character**: Remove a character by name from a TV show.
-    4. **Search for a Character**: Find and display a character by name across all shows.
-    5. **Sort Characters in a TV Show**: Rearrange and update the linked list of characters for a specific TV show based on:
-      - Name (alphabetically 🅰️)
-      - Age (ascending ⬆️ or descending ⬇️)
-    After sorting, the characters should be stored in the linked list in the new sorted order. Display the sorted list on the screen to show the updated order.
-    6. **Update Character Information**: Modify the details of an existing character. You can update any or all of the following fields:
-   - **Special Ability**
-   - **Age**
-   **Note**: The **character's name** cannot be changed, as it is used to identify the character in the list. If you need to change the name, consider deleting the character and adding a new one.
-    7. **Exit**: Terminate the program after freeing all allocated memory.
+#### Menu-Driven Interface 🎛️
+
+Your program should present a user-friendly menu that allows users to perform various operations. Below are the menu options, organized for clarity:
+
+1. **Display All TV Shows and Characters**
+
+   - **Description**: Show all TV shows in your catalog along with their respective characters.
+   - **Action**:
+     - List each TV show.
+     - Under each TV show, display all characters belonging to it.
+
+2. **Add a New Character**
+
+   - **Description**: Input details of a new character and add them to the appropriate TV show.
+   - **Action**:
+     - Prompt the user for:
+       - **TV Show Name**
+       - **Character Name**
+       - **Age**
+       - **Special Ability**
+     - **If the TV show does not exist**:
+       - Create a new `TVShow` node and add it to the TV show linked list.
+     - Add the new character to the linked list of the specified TV show.
+
+3. **Delete a Character**
+
+   - **Description**: Remove a character by name from a TV show.
+   - **Action**:
+     - Prompt the user for the **Character Name** to delete.
+     - Search across all TV shows to find the character.
+     - **If found**:
+       - Remove the character from the character linked list of the corresponding TV show.
+     - **If not found**:
+       - Display an appropriate message indicating the character was not found.
+
+4. **Search for a Character**
+
+   - **Description**: Find and display a character by name across all TV shows.
+   - **Action**:
+     - Prompt the user for the **Character Name** to search.
+     - Search through all TV shows and their character lists.
+     - **If found**:
+       - Display the character's details:
+         - TV Show Name
+         - Character Name
+         - Age
+         - Special Ability
+     - **If not found**:
+       - Display an appropriate message indicating the character was not found.
+
+5. **Sort Characters in a TV Show**
+
+   - **Description**: Rearrange and update the character list of a specific TV show based on a chosen sorting criterion.
+   - **Action**:
+     - Prompt the user for the **TV Show Name**.
+     - **If the TV show exists**:
+       - Ask the user to choose a sorting criterion:
+         1. **Sort by Name** (Alphabetically 🅰️)
+         2. **Sort by Age**:
+            - **Ascending Order** (⬆️)
+            - **Descending Order** (⬇️)
+       - Perform the sorting by rearranging the character linked list of the specified TV show.
+       - **Display** the sorted list of characters for that TV show.
+     - **If the TV show does not exist**:
+       - Display an appropriate message indicating the TV show was not found.
+
+6. **Update Character Information**
+
+   - **Description**: Modify the details of an existing character.
+   - **Action**:
+     - Prompt the user for the **Character Name** to update.
+     - Search through all TV shows to find the character.
+     - **If found**:
+       - Inform the user that the character's **name cannot be changed**, as it is used to identify the character.
+       - Allow the user to update one or both of the following fields:
+         - **Age**
+         - **Special Ability**
+       - Prompt the user for the new value(s) and update the character's information.
+     - **If not found**:
+       - Display an appropriate message indicating the character was not found.
+
+7. **Exit**
+
+   - **Description**: Terminate the program safely.
+   - **Action**:
+     - Before exiting, ensure all dynamically allocated memory is properly freed to prevent memory leaks.
+     - Display a farewell message (optional) and terminate the program.
 
 - **User Input Validation**:
   - Ensure all user inputs are validated.
