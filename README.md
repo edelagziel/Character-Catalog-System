@@ -37,19 +37,20 @@ Your mission (and yes, you should accept it, or the coding gods will frown upon 
 
 ### 2. Program Requirements 🚀
 
-- **Data Initialization**:
-  - A text file named `characters.txt` containing **100 characters** is provided.
-    - Each line in the file represents a character with fields separated by commas:
-      ```
-      ShowName,CharacterName,Age,SpecialAbility
-      ```
-      Example:
-      ```
-      Pokémon,Ash Ketchum,10,Pokémon Trainer
-      ```
-  - Your program should read from `characters.txt` and populate the TV show linked list.
-    - If a TV show doesn't exist in your list yet, create a new `TVShow` node.
-    - Add each character to the linked list of their respective TV show.
+#### Data Initialization 📥
+
+- A text file named `characters.txt` containing **100 characters** is provided.
+  - Each line in the file represents a character with fields separated by commas:
+    ```
+    ShowName,CharacterName,Age,SpecialAbility
+    ```
+    Example:
+    ```
+    Pokémon,Ash Ketchum,10,Pokémon Trainer
+    ```
+- Your program should read from `characters.txt` and populate the TV show linked list.
+  - If a TV show doesn't exist in your list yet, create a new `TVShow` node.
+  - Add each character to the linked list of their respective TV show.
 
 #### Menu-Driven Interface 🎛️
 
@@ -139,27 +140,18 @@ Your program should present a user-friendly menu that allows users to perform va
      - Before exiting, ensure all dynamically allocated memory is properly freed to prevent memory leaks.
      - Display a farewell message (optional) and terminate the program.
 
-- **User Input Validation**:
-  - Ensure all user inputs are validated.
-  - Handle incorrect inputs gracefully with appropriate error messages (because nobody likes a program that crashes like Team Rocket! 😜).
+#### User Input Validation ✔️
 
-### 3. Provided Resources 📦
+- Ensure all user inputs are validated.
+- Handle incorrect inputs gracefully with appropriate error messages (because nobody likes a program that crashes like Team Rocket! 😜).
+- Provide clear prompts and instructions to guide the user.
 
-- **File Reading Class**:
-  - We've provided a `FileReader` class to help you read from `characters.txt`.
-    - The class includes methods to open the file, read lines, and parse the data.
-    - You can use this class directly in your `main` function.
-  - **Note**: Even though you're using the provided class, make sure to understand how it works!
-
-- **characters.txt**:
-  - A text file containing 100 characters from various TV shows.
-  - Make sure this file is in the same directory as your executable when running the program.
-
-### 4. Implementation Details 🔧
+### 3. Implementation Details 🔧
 
 - **String Handling**:
   - Use `char*` for all strings.
   - Utilize C-style string functions (`strlen`, `strcpy`, `strcmp`, etc.).
+  - **Do not use `strdup`** or any non-standard string duplication functions.
   - Dynamically allocate memory for all `char*` fields.
   - Ensure no buffer overflows or memory leaks occur.
 
@@ -175,12 +167,7 @@ Your program should present a user-friendly menu that allows users to perform va
   - Implement checks for null pointers and allocation failures.
   - Provide meaningful error messages to the user.
 
-- **String Duplication**:
-  - Do **not** use `strdup` or any non-standard string duplication functions.
-  - When copying strings, manually allocate memory using `malloc` or `new`, and use `strcpy` or similar functions to copy the content.
-  - Ensure you properly allocate and deallocate memory to prevent leaks.
-
-## Requirements 🛠️
+### 4. Requirements 🛠️
 
 - **Language and Tools**:
   - Use C++ for implementation.
@@ -195,13 +182,13 @@ Your program should present a user-friendly menu that allows users to perform va
   - Ensure the code compiles without errors or warnings.
   - Provide a makefile or detailed compilation instructions.
 
-## Submission Guidelines 📤
+### 5. Submission Guidelines 📤
 
 - **Files to Submit**:
   - All source code files (`.cpp` and `.h`), including the `FileReader` class.
   - A makefile or detailed compilation instructions.
 
-## Helpful Tips 💡
+### 6. Helpful Tips 💡
 
 - **Dynamic Memory**:
   - Always check if memory allocation (`new`, `malloc`) was successful.
