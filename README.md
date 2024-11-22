@@ -57,10 +57,14 @@ Your mission (and yes, you should accept it, or the coding gods will frown upon 
     2. **Add a New Character**: Input character details and add to the correct TV show.
     3. **Delete a Character**: Remove a character by name from a TV show.
     4. **Search for a Character**: Find and display a character by name across all shows.
-    5. **Sort Characters in a TV Show**: Sort characters of a specific TV show based on:
-       - Name (alphabetically 🅰️)
-       - Age (ascending ⬆️ or descending ⬇️)
-    6. **Update Character Information**: Modify details of an existing character.
+    5. **Sort Characters in a TV Show**: Rearrange and update the linked list of characters for a specific TV show based on:
+      - Name (alphabetically 🅰️)
+      - Age (ascending ⬆️ or descending ⬇️)
+    After sorting, the characters should be stored in the linked list in the new sorted order. Display the sorted list on the screen to show the updated order.
+    6. **Update Character Information**: Modify the details of an existing character. You can update any or all of the following fields:
+   - **Special Ability**
+   - **Age**
+   **Note**: The **character's name** cannot be changed, as it is used to identify the character in the list. If you need to change the name, consider deleting the character and adding a new one.
     7. **Exit**: Terminate the program after freeing all allocated memory.
 
 - **User Input Validation**:
@@ -98,6 +102,11 @@ Your mission (and yes, you should accept it, or the coding gods will frown upon 
 - **Error Handling**:
   - Implement checks for null pointers and allocation failures.
   - Provide meaningful error messages to the user.
+
+- **String Duplication**:
+  - Do **not** use `strdup` or any non-standard string duplication functions.
+  - When copying strings, manually allocate memory using `malloc` or `new`, and use `strcpy` or similar functions to copy the content.
+  - Ensure you properly allocate and deallocate memory to prevent leaks.
 
 ## Requirements 🛠️
 
