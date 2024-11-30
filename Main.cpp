@@ -2,6 +2,7 @@
 #include"CharacterNode.hpp"
 #include"CharacterList.hpp"
 #include"TvShowNode.hpp"
+#include"TvShowList.hpp"
 int main()
 {
 //      char* eden="Eden";
@@ -13,7 +14,14 @@ int main()
 // CharacterListmy.Add("eden","Smrtness",25);
 // CharacterListmy.Add("yam","Gitar",17);
 // CharacterListmy.PrintList();
-TvShowNode NewTvSow("Dragonball");
+
+
+TvShowList NewShowList;
+ NewShowList.AddCharacterToShow("Dragonball","Goko","Sayien",45);
+   NewShowList.AddShow("zzz","rrotot","www",32);
+    NewShowList.PtintAllShow();
+
+
 
 
 

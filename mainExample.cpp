@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <cstring>
 #include "FileReader.h"
+#include"TvShowList.hpp"
 
 //THIS IS AN EXAMPLE FILE - YOU CAN DELETE EVERYTHING HERE
 
@@ -13,6 +14,7 @@ int main() {
     }
 
     char* line;
+    TvShowList NewTvShowList ;//Create new List For Tv Show
     while ((line = reader.getNextLine()) != NULL) {
         // Parse the line
         // Expected format: ShowName,CharacterName,Age,SpecialAbility
@@ -62,17 +64,22 @@ int main() {
         // Now you have showName, characterName, age, specialAbility
         // TODO: Add the character to the appropriate TVShow linked list
         // Remember to delete showName, characterName, and specialAbility when done
+        NewTvShowList.AddShow(showName,characterName,specialAbility,age);
+
 
         // For demonstration purposes, let's just print them
-        std::cout << "Show: " << showName << ", Character: " << characterName
-                  << ", Age: " << age << ", Ability: " << specialAbility << std::endl;
+        //  std::cout << "Show: " << showName << ", Character: " << characterName
+        //            << ", Age: " << age << ", Ability: " << specialAbility << std::endl;
 
         // Don't forget to free the allocated memory
         delete[] showName;
         delete[] characterName;
         delete[] specialAbility;
         delete[] line;
-    }
 
+    }
+    NewTvShowList.AddShow("Eden");
+    NewTvShowList.AddCharacterToShow("Eden","LOLO","KUtnness lolo",24);
+    NewTvShowList.PtintAllShow();//Print all Show from The File
     return 0;
 }

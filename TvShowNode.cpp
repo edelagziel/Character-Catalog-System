@@ -7,14 +7,17 @@
 TvShowNode::TvShowNode(char*ShowName)
 {
     this->ShowName=new char[strlen(ShowName+1)];
-    this->ShowName=ShowName;
+    strcpy(this->ShowName,ShowName);
 }
 
 TvShowNode::~TvShowNode()
 {
     delete []ShowName;
 }
-
+char* TvShowNode::GetName()
+{
+    return this->ShowName;
+}
 void TvShowNode::PrintNode()
 {
     std::cout<<ShowName<<std::endl;

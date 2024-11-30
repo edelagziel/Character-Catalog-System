@@ -12,10 +12,13 @@ class TvShowNode
     ~TvShowNode();
     TvShowNode(char*ShowName);
     void PrintNode();
-    private:
-    char* ShowName;
     CharacterList MyCharacterList;
     TvShowNode * Next;
+    char* GetName();
+    private:
+    char* ShowName;
+ 
+
 
 };
 
