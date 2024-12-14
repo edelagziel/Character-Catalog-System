@@ -26,3 +26,5 @@ CharacterNode:: CharacterNode(char*Name,char*specialAbility,int age)
      std::cout << specialAbility<<" ";
      std::cout << age<<std::endl;
  }
+  
+

@@ -91,4 +91,83 @@ void TvShowList::AddCharacterToShow(char *ShowName,char*Name,char*specialAbility
         }
 
     }
+   void TvShowList::DeleteCharacter(char *Name )
+   {
+       if(Head==nullptr)return;
+        TvShowNode *Current=Head;
+        while(Current!=nullptr)
+        {
+            CharacterNode *FoundChrcter= Current->MyCharacterList.Find(Name);
+            if(FoundChrcter!=nullptr)
+            {
+                Current->MyCharacterList.DeleteNode(Name);
+                return;
+            }
+            Current=Current->Next;
+        }
+        std::cout<<"Charcter Didnot Found"<<std::endl;
+   }
+
+   void TvShowList::SearchCharacter(char *Name)
+   {
+    if(Head==nullptr)return;
+        TvShowNode *Current=Head;
+        while(Current!=nullptr)
+        {
+            CharacterNode *FoundChrcter= Current->MyCharacterList.Find(Name);
+            if(FoundChrcter!=nullptr)
+            {
+                std::cout<<Current->GetName()<<std::endl;
+                FoundChrcter->PrintNode();
+                return;
+            }
+            Current=Current->Next;
+        }
+        std::cout<<"Charcter Didnot Found"<<std::endl;
+   }
+  
+   void TvShowList::UpdateCharacterInfo(char *Name, char *specialAbility, int age)
+   {
+       if (Head == nullptr)
+           return;
+       TvShowNode *Current = Head;
+       while (Current != nullptr)
+       {
+           CharacterNode *FoundChrcter = Current->MyCharacterList.Find(Name);
+           if (FoundChrcter != nullptr)
+           {
+               FoundChrcter->age = age;
+               delete[] FoundChrcter->specialAbility;
+               FoundChrcter->specialAbility = new char[strlen(specialAbility) + 1];
+               strcpy(FoundChrcter->specialAbility, specialAbility);
+               return;
+           }
+           Current = Current->Next;
+       }
+       std::cout << "Charcter Didnot Found" << std::endl;
+      }
+
+
+
+    void TvShowList::SortCharacters(char*TvShowName,SortWay CossenSort)
+   {
+        TvShowNode *Cur=Head;
+
+        while(Cur!=NULL&& strcmp(TvShowName,Cur->GetName()))
+        {
+            Cur=Cur->Next;        
+        }
+        if(Cur==NULL)
+        {
+            std::cerr<<"Tv Not Found"<<std::endl;
+            return;
+        }
+        Cur->MyCharacterList.SortCharacter((int)CossenSort);
+    
+   }
+
+
+   
+
+
 

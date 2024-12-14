@@ -6,6 +6,14 @@
 #include"TvShowNode.hpp"
 
 
+
+enum SortWay
+{
+    SortByAgeDown=0,
+    SortByAgeUp=1,
+    SortByName=2
+};
+
 class TvShowList
 {
     public:
@@ -15,6 +23,11 @@ class TvShowList
     void AddShow(char *ShowName,char*Name,char*specialAbility,int age);
     void AddCharacterToShow(char *ShowName,char*Name,char*specialAbility,int age);
     void PtintAllShow();
+    void DeleteCharacter(char *Name);
+    void SearchCharacter(char *Name);
+    void SortCharacters (char *TvShowName,SortWay CossenSort);
+    void UpdateCharacterInfo(char *Name,char *specialAbility,int age);
+    
 
     private:
     TvShowNode *Head;

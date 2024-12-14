@@ -13,7 +13,7 @@ class CharacterNode
     CharacterNode * Next;       //pointer to The Next Charcter 
 
 
-    private:
+    
     char * Name;            //The name of the character.
     char* specialAbility;   //A brief description of the character's special ability.
     int age;                //The age of the character
