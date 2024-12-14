@@ -118,7 +118,7 @@ void CharacterList::DeleteNode(char*Name)
 
 void CharacterList::SortCharacter(int SortNum)
 {
-    if (Head == NULL || Head->Next == NULL) return; // אם הרשימה ריקה או עם איבר אחד
+    if (Head == NULL || Head->Next == NULL) return; 
 
     bool swapped;
     do {
@@ -129,36 +129,33 @@ void CharacterList::SortCharacter(int SortNum)
         while (Current != NULL && Current->Next != NULL) {
             bool shouldSwap = false;
 
-            // בדיקות מיון לפי SortNum
-            if (SortNum == 0) { // מיון יורד לפי גיל
+            if (SortNum == 0) { 
                 if (Current->age < Current->Next->age) {
                     shouldSwap = true;
                 }
-            } else if (SortNum == 1) { // מיון עולה לפי גיל
+            } else if (SortNum == 1) { 
                 if (Current->age > Current->Next->age) {
                     shouldSwap = true;
                 }
-            } else if (SortNum == 2) { // מיון  לפי שם
+            } else if (SortNum == 2) { 
                 if (strcmp(Current->Name, Current->Next->Name) > 0) {
                     shouldSwap = true;
                 }
             }
 
-            // אם יש צורך בהחלפה
             if (shouldSwap) {
                 CharacterNode *Temp = Current->Next;
                 Current->Next = Temp->Next;
                 Temp->Next = Current;
 
                 if (Prev == NULL) {
-                    // החלפת הצומת הראשון (Head)
                     Head = Temp;
                 } else {
                     Prev->Next = Temp;
                 }
 
                 swapped = true;
-                Prev = Temp; // Previous moves to Temp after swapping
+                Prev = Temp; 
             } else {
                 Prev = Current;
                 Current = Current->Next;
